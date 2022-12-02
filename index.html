@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <style>
+      .title {
+        color: #fff;
+      }
+      .blue {
+        background: skyblue;
+      }
+      .purple {
+        background: rebeccapurple;
+      }
+      .yellow {
+        background: gold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2 class="title">Hello!</h2>
+    <script>
+      const body = document.body;
+      const colorClass = ["blue", "purple", "yellow"];
+      function changeColor() {
+        body.classList.remove(colorClass[0]);
+        body.classList.remove(colorClass[1]);
+        body.classList.remove(colorClass[2]);
+        const windowInnerWidth = window.innerWidth;
+        if (windowInnerWidth < 640) {
+          body.classList.add(colorClass[0]);
+        } else if (windowInnerWidth < 1280) {
+          body.classList.add(colorClass[1]);
+        } else {
+          body.classList.add(colorClass[2]);
+        }
+      }
+      changeColor();
+      window.addEventListener("resize", changeColor);
+
+    </script>
+  </body>
+</html>
